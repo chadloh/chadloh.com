@@ -55,6 +55,14 @@
             <!-- /.offcanvas-body -->
           </div>
           <!-- /.navbar-collapse -->
+          <div class="navbar-other w-100 d-flex ms-auto">
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+              <li class="nav-item d-lg-none">
+                <button class="hamburger offcanvas-nav-btn"><span></span></button>
+              </li>
+            </ul>
+            <!-- /.navbar-nav -->
+          </div>
         </div>
         <!-- /.container -->
       </nav>
@@ -63,18 +71,23 @@
     <!-- /header -->
     <section id="home">
       <div class="container pt-14 pb-14 py-16">
-        <div class="col-md-12 offset-md-1 offset-lg-0 text-lg-start" data-cues="slideInDown" data-group="page-title" data-delay="600">
-          <h1 class="display-1">Oh, hello! <span class="waving-hand">👋🏻</span><br>I am <span class="underline blue">Chad Loh</span>, <br>a creative<br> <span class="typer text-primary text-nowrap" data-delay="100" data-words="engineer.,material scientist.,data scientist.,maker."></span><span class="cursor text-primary" data-owner="typer"></span></h1>
-          <p class="display-6 mb-7"> I love the feeling of solving complex problems with<span class="underline-3 style-1 blue">&nbsp;simple&nbsp;solutions&nbsp;</span>. <br>Thinking outside the box is my specialty.</p>
-          <div class="d-flex justify-content-center justify-content-lg-start mb-4" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
-            <span><a class="btn btn-lg btn-primary rounded-pill scroll" href="#portfolio">Check my portfolio!</a></span>
+        <div class ="row align-items-center">
+          <div class="col-12 col-md-8 text-start" data-cues="slideInDown" data-group="page-title" data-delay="800">
+            <h1 class="display-1">Oh, hello! <span class="waving-hand">👋🏻</span><br>I am <span class="underline blue">Chad Loh</span>, <br>a creative<br> <span class="typer text-primary text-nowrap" data-delay="100" data-words="engineer.,material scientist.,data scientist.,maker."></span><span class="cursor text-primary" data-owner="typer"></span></h1>
+            <p class="display-6 mb-7"> I love the feeling of solving complex problems with<span class="underline-3 style-1 blue">&nbsp;simple&nbsp;solutions.&nbsp;</span><br>Thinking outside the box is my specialty.</p>
+            <div class="d-flex justify-content-center justify-content-lg-start mb-4" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
+              <span><a class="btn btn-lg btn-primary rounded-pill scroll" href="#portfolio">Check my portfolio!</a></span>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 text-center">
+            <img src="./assets/img/icons/icons-01.png" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
           </div>
         </div>
       </div>
       <!-- /.wrapper -->
     </section>
     <!-- /section -->
-    <section id="about">
+    <section id="about" data-cues="slideInDown" data-group="page-about" data-delay="800">
       <div class="wrapper bg-soft-primary angled upper-start lower-end">
         <div class="container py-6 py-md-12">
           <h3 class="display-5 mb-5">About Me</h3>
@@ -113,7 +126,7 @@
                           <li>Machine Learning I</li>
                           <li>Machine Learning II</li>
                           <li>Data Science: Advanced Topics</li>
-                          <li>Data Science Capstone Project</li>`
+                          <li>Data Science Capstone Project</li>
                         </ul>
                       </p>
                     </div>
@@ -351,7 +364,7 @@
       <!-- /.wrapper -->
     </section>
     <!-- /section -->
-    <section id="research">
+    <section id="research" data-cues="slideInDown" data-group="page-research">
       <div class="container py-6 py-md-12">
         <section class="wrapper bg-light">
           <h3 class="display-5 mb-5">Research</h3>
@@ -509,7 +522,7 @@
       <!-- /.container -->
     </section>
     <!-- /section -->
-    <section id="portfolio" class="wrapper bg-soft-violet angled upper-start py-3">
+    <section id="portfolio" class="wrapper bg-soft-violet angled upper-start py-3" data-cues="slideInDown" data-group="page-portfolio">
       <!-- /section -->
       <div class="container py-6 py-md-12">
           <h3 class="display-5 mb-5">Portfolio</h3>
@@ -652,30 +665,27 @@
         <!-- /.container -->
     </section>
     <!-- /section -->
-    <section id="contact">
-      <section class="wrapper bg-light">
-        <div class="container py-14 py-md-16">
-          <div class="row gy-10 gx-lg-8 gx-xl-12 align-items-center">
-            <div class="col-lg-7 order-lg-2 position-relative">
-              <figure><img class="img-fluid" src="./assets/img/illustrations/3d3.png" srcset="./assets/img/illustrations/3d3@2x.png 2x" alt="" /></figure>
-            </div>
-
-            <!--/column -->
-            <div class="col-lg-5">
-              <h2 class="display-4 mb-3">Let’s Connect!</h2>
-              <p class="lead fs-lg"> I always enjoy <span class="underline red">quick chats</span> with people from diverse industries. Let me know if you’re interested in swapping stories sometime. </p>
-              <div class="row col-12">
-                <div class="col-4 text-center"><a href="mailto:chaddloh@gmail.com" class="btn btn-gradient gradient-1 rounded-pill mt-2"><i class="display-3 uil uil-envelope"></i></a></div>
-                <div class="col-4 text-center"><a href="https://www.instagram.com/chadloh" class="btn btn-gradient gradient-5  rounded-pill mt-2"><i class="display-3 uil uil-instagram"></i></a></div>
-                <div class="col-4 text-center"><a href="https://www.linkedin.com/in/chadloh/" class="btn btn-gradient gradient-7 rounded-pill mt-2"><i class="display-3 uil uil-linkedin"></i></a></div>
-              </div>
-            </div>
-            <!--/column -->
+    <section id="contact" lass="wrapper bg-light">
+      <div class="container py-14 py-md-16">
+        <div class="row gy-10 gx-lg-8 gx-xl-12 align-items-center">
+          <div class="col-lg-7 order-lg-2 position-relative">
+            <figure><img class="img-fluid" src="./assets/img/illustrations/3d3.png" srcset="./assets/img/illustrations/3d3@2x.png 2x" alt="" /></figure>
           </div>
-          <!--/.row -->
+
+          <!--/column -->
+          <div class="col-lg-5">
+            <h2 class="display-4 mb-3">Let’s Connect!</h2>
+            <p class="lead fs-lg"> I always enjoy <span class="underline red">quick chats</span> with people from diverse industries. Let me know if you’re interested in swapping stories sometime. </p>
+            <div class="row col-12">
+              <div class="col-4 text-center"><a href="mailto:chaddloh@gmail.com" class="btn btn-gradient gradient-1 rounded-pill mt-2"><i class="display-3 uil uil-envelope"></i></a></div>
+              <div class="col-4 text-center"><a href="https://www.instagram.com/chadloh" class="btn btn-gradient gradient-5  rounded-pill mt-2"><i class="display-3 uil uil-instagram"></i></a></div>
+              <div class="col-4 text-center"><a href="https://www.linkedin.com/in/chadloh/" class="btn btn-gradient gradient-7 rounded-pill mt-2"><i class="display-3 uil uil-linkedin"></i></a></div>
+            </div>
+          </div>
+          <!--/column -->
         </div>
-        <!-- /.container -->
-      </section>
+        <!--/.row -->
+      </div>
       <!-- /section -->
     </section>
     <!-- /section -->
@@ -685,7 +695,7 @@
     <div class="container py-5">
       <div class="col-12 text-center">
         <img class="mb-4" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />
-        <p class="mb-4">© 2022 ChadLoh <br class="d-none d-lg-block" />All rights reserved.</p>
+        <p class="mb-4">© 2022 ChadLoh | All rights reserved.</p>
       </div>
     </div>
     <!-- /.container -->
