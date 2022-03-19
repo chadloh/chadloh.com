@@ -33,17 +33,17 @@
                 <li class="nav-item"><a class="nav-link scroll active" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link scroll" href="#about">About</a></li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle scroll" href="#research" data-bs-toggle="dropdown">Research</a>
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Research</a>
                   <div class="dropdown-menu dropdown-lg">
-                    <div class="dropdown-lg-content">
-                      <div>
-                        <h6 class="dropdown-header">Project pages</h6>
-                        <ul class="list-unstyled">
-                          <li><a class="dropdown-item" href="./3dcp.html">3D concrete printing</a></li>
-                          <li><a class="dropdown-item" href="./nacre.html">Nacre research</a></li>
-                          <li><a class="dropdown-item" href="./cement.html">Fresh concrete</a></li>
-                        </ul>
-                      </div>
+                    <div class="dropdown-content">
+                      <a class="dropdown-item scroll" href="#research">Research overview</a>
+                      <hr class="my-4">
+                      <h6 class="dropdown-header">Project pages</h6>
+                      <ul class="list-unstyled offset-1">
+                        <li><a class="dropdown-item" href="./3dcp.html">3D concrete printing</a></li>
+                        <li><a class="dropdown-item" href="./nacre.html">Nacre research</a></li>
+                        <li><a class="dropdown-item" href="./cement.html">Fresh concrete research</a></li>
+                      </ul>
                     <!-- /auto-column -->
                   </div>
                 </li>
@@ -79,8 +79,8 @@
               <span><a class="btn btn-lg btn-primary rounded-pill scroll" href="#portfolio">Check my portfolio!</a></span>
             </div>
           </div>
-          <div class="col-12 col-md-4 text-center d-none d-md-block position-relative " data-cues="zoomOut" data-group="page-avatar" data-delay="300">
-            <div class="shape bg-dot primary rellax w-17 h-19" data-rellax-speed="1" style="top: -1.7rem; left: -1.5rem;"></div>
+          <div class="col-12 col-md-4 text-center d-none d-md-block position-relative " data-cues="zoomOut" data-group="page-avatar" data-delay="1200">
+            <div class="shape bg-dot primary rellax w-20 h-19" data-rellax-speed="1" style="top: -1.7rem; left: -4.5rem;"></div>
             <div class="shape bg-line sky rounded-circle rellax d-md-block" data-rellax-speed="0" style="bottom: -1.8rem; right: -0.8rem; width: 90%; height: 90%;"></div>
             <figure><img src="./assets/img/avatar.png" width = "100%" alt="avatar"></figure>
           </div>
@@ -327,7 +327,7 @@
                   <div class="card-body">
                     <img src="./assets/img/icons/icons-02.png" class="svg-inject icon-svg icon-svg-md text-green mb-3" alt="" />
                     <h4>Engineering</h4>
-                    <p class="mb-2">Structural analysis<br>Optimization<br>Finite element analysis<br>3D Printing<br>CNC</p>
+                    <p class="mb-2">Optimization<br>Cement chemistry<br>Structural analysis<br>Finite element analysis<br>3D Printing/CNC</p>
                   </div>
                   <!--/.card-body -->
                 </div>
@@ -335,11 +335,11 @@
               </div>
               <!--/column -->
               <div class="lift col-md-6 col-xl-3 text-center">
-                <div class="card shadow-lg card-border-bottom border-soft-orange">
+                <div class="card shadow-lg card-border-bottom border-soft-red">
                   <div class="card-body">
-                    <img src="./assets/img/icons/icons-03.png" class="svg-inject icon-svg icon-svg-md text-orange mb-3" alt="" />
+                    <img src="./assets/img/icons/icons-03.png" class="svg-inject icon-svg icon-svg-md text-red mb-3" alt="" />
                     <h4 class="text-center">Material Science</h4>
-                    <p class="mb-2 text-center">Raman spectroscopy<br>SEM/EDS<br>XRD<br>Micro-indentation<br>Material testing</p>
+                    <p class="mb-2 text-center">SEM/EDS<br>Raman spectroscopy<br>X-Ray Diffraction<br>Micro-indentation<br>Material testing</p>
                   </div>
                   <!--/.card-body -->
                 </div>
@@ -369,71 +369,79 @@
     <section id="research" data-cues="slideInDown" data-group="page-research">
       <div class="container py-6 py-md-12">
         <section class="wrapper">
-          <h3 class="display-5 mb-5">Research</h3>
-          <div class="container py-3 py-md-6">
-            <div class="swiper-container blog grid-view" data-margin="30" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <article>
-                      <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="3dcp.html"> <img src="./assets/img/photos/bg22.png" alt="" /></a>
-                        <figcaption>
-                          <h5 class="from-top mb-0">Read More</h5>
-                        </figcaption>
-                      </figure>
-                      <div class="post-header">
-                        <div class="post-category text-line">
-                          <a href="3dcp.html" class="hover" rel="category">3D CONCRETE PRINTING</a>
-                        </div>
-                        <!-- /.post-category -->
-                        <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">How can we <span class = "underline primary">print</span> houses?</a></h2>
-                      </div>
-                    </article>
-                    <!-- /article -->
-                  </div>
-                  <!--/.swiper-slide -->
-                  <div class="swiper-slide">
-                    <article>
-                      <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="nacre.html"> <img src="./assets/img/photos/bg23.png" alt="" /></a>
-                        <figcaption>
-                          <h5 class="from-top mb-0">Read More</h5>
-                        </figcaption>
-                      </figure>
-                      <div class="post-header">
-                        <div class="post-category text-line">
-                          <a href="nacre.html" class="hover" rel="category">NACRE RESEARCH</a>
-                        </div>
-                        <!-- /.post-category -->
-                        <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">Why are <span class = "underline primary">shells</span> so strong?</a></h2>
-                      </div>
-                    </article>
-                    <!-- /article -->
-                  </div>
-                  <!--/.swiper-slide -->
-                  <div class="swiper-slide">
-                    <article>
-                      <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="cement.html"> <img src="./assets/img/photos/bg24.png" alt="" /></a>
-                        <figcaption>
-                          <h5 class="from-top mb-0">Read More</h5>
-                        </figcaption>
-                      </figure>
-                      <div class="post-header">
-                        <div class="post-category text-line">
-                          <a href="ccr.html" class="hover" rel="category">FRESH CONCRETE RESEARCH</a>
-                        </div>
-                        <!-- /.post-category -->
-                        <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">How does <span class = "underline primary">concrete</span> harden?</a></h2>
-                      </div>
-                    </article>
-                    <!-- /article -->
-                  </div>
-                  <!--/.swiper-slide -->
-                </div>
-                <!--/.swiper-wrapper -->
+          <div class="container text-center pt-6">
+            <h3 class="display-1">Research</h3>
+            <h2 class="fs-16 text-uppercase text-dark mb-3"><span class="badge bg-green rounded-pill">Engineering</span> <span class="badge bg-red rounded-pill">Science</span></h2>
+          </div>
+          <div class="container py-6">
+            <div class="row">
+              <div class="col-12 mx-auto text-center">
+                <h3 class="display-4 mb-10">My research focus is developing structural materials though multiscale&nbspcharacterization techniques.</h3>
               </div>
-              <!-- /.swiper -->
-            </div>
+              <div class="swiper-container nav-bottom nav-dark blog grid-view" data-margin="30" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <article>
+                        <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="3dcp.html"> <img src="./assets/img/photos/bg22.png" alt="" /></a>
+                          <figcaption>
+                            <h5 class="from-top mb-0">Read More</h5>
+                          </figcaption>
+                        </figure>
+                        <div class="post-header">
+                          <div class="post-category text-line">
+                            <a href="3dcp.html" class="hover" rel="category">3D CONCRETE PRINTING</a>
+                          </div>
+                          <!-- /.post-category -->
+                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">How can we <span class = "underline primary">print</span> houses?</a></h2>
+                        </div>
+                      </article>
+                      <!-- /article -->
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                      <article>
+                        <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="nacre.html"> <img src="./assets/img/photos/bg23.png" alt="" /></a>
+                          <figcaption>
+                            <h5 class="from-top mb-0">Read More</h5>
+                          </figcaption>
+                        </figure>
+                        <div class="post-header">
+                          <div class="post-category text-line">
+                            <a href="nacre.html" class="hover" rel="category">NACRE RESEARCH</a>
+                          </div>
+                          <!-- /.post-category -->
+                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">Why are <span class = "underline primary">shells</span> so strong?</a></h2>
+                        </div>
+                      </article>
+                      <!-- /article -->
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                      <article>
+                        <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="cement.html"> <img src="./assets/img/photos/bg24.png" alt="" /></a>
+                          <figcaption>
+                            <h5 class="from-top mb-0">Read More</h5>
+                          </figcaption>
+                        </figure>
+                        <div class="post-header">
+                          <div class="post-category text-line">
+                            <a href="ccr.html" class="hover" rel="category">FRESH CONCRETE RESEARCH</a>
+                          </div>
+                          <!-- /.post-category -->
+                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">How does <span class = "underline primary">concrete</span> harden?</a></h2>
+                        </div>
+                      </article>
+                      <!-- /article -->
+                    </div>
+                    <!--/.swiper-slide -->
+                  </div>
+                  <!--/.swiper-wrapper -->
+                </div>
+                <!-- /.swiper -->
+              </div>
             <!-- /.swiper-container -->
+            </div>
           </div>
           <div class ="container py-6 mt-9 mt-md-2 mb-12">
             <ul class="nav nav-tabs nav-pills">
@@ -451,7 +459,6 @@
               </li>
             </ul>
             <!-- /.nav-tabs -->
-
             <div class="tab-content">
               <div class="tab-pane fade" id="researchTab1-1">
                 <ul class="icon-list bullet-bg bullet-soft-blue">
@@ -524,109 +531,108 @@
       <!-- /.container -->
     </section>
     <!-- /section -->
-    <section id="portfolio" class="wrapper bg-soft-violet angled upper-start py-3" data-cues="slideInDown" data-group="page-portfolio">
+    <section id="portfolio" class="wrapper bg-soft-yellow angled upper-start py-3" data-cues="slideInDown" data-group="page-portfolio">
       <!-- /section -->
       <div class="container py-6 py-md-12">
-          <h3 class="display-5 mb-5">Portfolio</h3>
-          <section class="wrapper">
-            <div class="overflow-hidden">
-              <div class="container py-14 py-md-16">
-                <div class="row">
-                  <div class="col-lg-10 col-xl-9 col-xxl-8 mx-auto text-center">
-                    <h2 class="fs-16 text-uppercase text-primary mb-3">Latest Projects</h2>
-                    <h3 class="display-3 mb-10">Check out some of my projects with creative ideas and great design.</h3>
-                  </div>
-                  <!-- /column -->
-                </div>
-                <!-- /.row -->
-                <div class="swiper-container grid-view nav-bottom nav-dark mb-14" data-margin="30" data-dots="false" data-nav="true" data-items-md="2" data-items-xs="1">
-                  <div class="swiper overflow-visible">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p1.jpg" srcset="./assets/img/photos/p1@2x.jpg 2x" alt="" /></a></figure>
-                        <div class="project-details d-flex justify-content-center flex-column">
-                          <div class="post-header">
-                            <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Cras Fermentum Sem</a></h2>
-                            <div class="post-category text-ash">Mobile Design</div>
-                          </div>
-                          <!-- /.post-header -->
-                        </div>
-                        <!-- /.project-details -->
-                      </div>
-                      <!--/.swiper-slide -->
-                      <div class="swiper-slide">
-                        <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p2.jpg" srcset="./assets/img/photos/p2@2x.jpg 2x" alt="" /></a></figure>
-                        <div class="project-details d-flex justify-content-center flex-column">
-                          <div class="post-header">
-                            <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Venenatis Euismod Vehicula</a></h2>
-                            <div class="post-category text-ash">Web Design</div>
-                          </div>
-                          <!-- /.post-header -->
-                        </div>
-                        <!-- /.project-details -->
-                      </div>
-                      <!--/.swiper-slide -->
-                      <div class="swiper-slide">
-                        <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p3.jpg" srcset="./assets/img/photos/p3@2x.jpg 2x" alt="" /></a></figure>
-                        <div class="project-details d-flex justify-content-center flex-column">
-                          <div class="post-header">
-                            <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Tortor Tellus Cursus</a></h2>
-                            <div class="post-category text-ash">Stationary</div>
-                          </div>
-                          <!-- /.post-header -->
-                        </div>
-                        <!-- /.project-details -->
-                      </div>
-                      <!--/.swiper-slide -->
-                      <div class="swiper-slide">
-                        <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p4.jpg" srcset="./assets/img/photos/p4@2x.jpg 2x" alt="" /></a></figure>
-                        <div class="project-details d-flex justify-content-center flex-column">
-                          <div class="post-header">
-                            <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Ridiculus Sem Parturient</a></h2>
-                            <div class="post-category text-ash">Web Application</div>
-                          </div>
-                          <!-- /.post-header -->
-                        </div>
-                        <!-- /.project-details -->
-                      </div>
-                      <!--/.swiper-slide -->
-                      <div class="swiper-slide">
-                        <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p5.jpg" srcset="./assets/img/photos/p5@2x.jpg 2x" alt="" /></a></figure>
-                        <div class="project-details d-flex justify-content-center flex-column">
-                          <div class="post-header">
-                            <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Cursus Sollicitudin Adipiscing</a></h2>
-                            <div class="post-category text-ash">Web Design</div>
-                          </div>
-                          <!-- /.post-header -->
-                        </div>
-                        <!-- /.project-details -->
-                      </div>
-                      <!--/.swiper-slide -->
-                      <div class="swiper-slide">
-                        <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p6.jpg" srcset="./assets/img/photos/p6@2x.jpg 2x" alt="" /></a></figure>
-                        <div class="project-details d-flex justify-content-center flex-column">
-                          <div class="post-header">
-                            <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Fringilla Quam Vulputate</a></h2>
-                            <div class="post-category text-ash">Stationary</div>
-                          </div>
-                          <!-- /.post-header -->
-                        </div>
-                        <!-- /.project-details -->
-                      </div>
-                      <!--/.swiper-slide -->
-                    </div>
-                    <!--/.swiper-wrapper -->
-                  </div>
-                  <!-- /.swiper -->
-                </div>
-                <!-- /.swiper-container -->
+        <section class="wrapper overflow-hidden">
+          <div class="container text-center pt-6">
+            <h3 class="display-1">Portfolio</h3>
+            <h2 class="fs-16 text-uppercase text-dark mb-3"><span class="badge bg-yellow rounded-pill">Data science</span> <span class="badge bg-blue rounded-pill">Design</span></h2>
+          </div>
+          <div class="container py-6">
+            <div class="row">
+              <div class="col-12 mx-auto text-center">
+                <h3 class="display-4 mb-10">Check out some of my projects with creative ideas and great design.</h3>
               </div>
-              <!-- /.container -->
+                <!-- /column -->
+              <!-- /.row -->
+              <div class="swiper-container grid-view nav-bottom nav-dark mb-14" data-margin="30" data-nav="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
+                <div class="swiper overflow-visible">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p1.jpg" srcset="./assets/img/photos/p1@2x.jpg 2x" alt="" /></a></figure>
+                      <div class="project-details d-flex justify-content-center flex-column">
+                        <div class="post-header">
+                          <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Cras Fermentum Sem</a></h2>
+                          <div class="post-category text-ash">Mobile Design</div>
+                        </div>
+                        <!-- /.post-header -->
+                      </div>
+                      <!-- /.project-details -->
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                      <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p2.jpg" srcset="./assets/img/photos/p2@2x.jpg 2x" alt="" /></a></figure>
+                      <div class="project-details d-flex justify-content-center flex-column">
+                        <div class="post-header">
+                          <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Venenatis Euismod Vehicula</a></h2>
+                          <div class="post-category text-ash">Web Design</div>
+                        </div>
+                        <!-- /.post-header -->
+                      </div>
+                      <!-- /.project-details -->
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                      <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p3.jpg" srcset="./assets/img/photos/p3@2x.jpg 2x" alt="" /></a></figure>
+                      <div class="project-details d-flex justify-content-center flex-column">
+                        <div class="post-header">
+                          <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Tortor Tellus Cursus</a></h2>
+                          <div class="post-category text-ash">Stationary</div>
+                        </div>
+                        <!-- /.post-header -->
+                      </div>
+                      <!-- /.project-details -->
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                      <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p4.jpg" srcset="./assets/img/photos/p4@2x.jpg 2x" alt="" /></a></figure>
+                      <div class="project-details d-flex justify-content-center flex-column">
+                        <div class="post-header">
+                          <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Ridiculus Sem Parturient</a></h2>
+                          <div class="post-category text-ash">Web Application</div>
+                        </div>
+                        <!-- /.post-header -->
+                      </div>
+                      <!-- /.project-details -->
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                      <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p5.jpg" srcset="./assets/img/photos/p5@2x.jpg 2x" alt="" /></a></figure>
+                      <div class="project-details d-flex justify-content-center flex-column">
+                        <div class="post-header">
+                          <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Cursus Sollicitudin Adipiscing</a></h2>
+                          <div class="post-category text-ash">Web Design</div>
+                        </div>
+                        <!-- /.post-header -->
+                      </div>
+                      <!-- /.project-details -->
+                    </div>
+                    <!--/.swiper-slide -->
+                    <div class="swiper-slide">
+                      <figure class="rounded mb-7"><a href="./single-project.html"><img src="./assets/img/photos/p6.jpg" srcset="./assets/img/photos/p6@2x.jpg 2x" alt="" /></a></figure>
+                      <div class="project-details d-flex justify-content-center flex-column">
+                        <div class="post-header">
+                          <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Fringilla Quam Vulputate</a></h2>
+                          <div class="post-category text-ash">Stationary</div>
+                        </div>
+                        <!-- /.post-header -->
+                      </div>
+                      <!-- /.project-details -->
+                    </div>
+                    <!--/.swiper-slide -->
+                  </div>
+                  <!--/.swiper-wrapper -->
+                </div>
+                <!-- /.swiper -->
+              </div>
+              <!-- /.swiper-container -->
             </div>
-            <!-- /.overflow-hidden -->
-          </section>
-          <!-- /section -->
-        <!-- /.grid -->
+            <!-- /.container -->
+          </div>
+          <!-- /.overflow-hidden -->
+        </section>
+        <!-- /section -->
       </div>
         <!-- /.container -->
     </section>
@@ -634,8 +640,8 @@
     <section id="contact" lass="wrapper bg-light">
       <div class="container py-14 py-md-16">
         <div class="row gy-10 gx-lg-8 gx-xl-12 align-items-center">
-          <div class="col-lg-7 order-lg-2 position-relative" data-cues="zoomOut">
-            <div class="shape bg-line yellow rounded-circle rellax d-md-block" data-rellax-speed="0" style="bottom: -1.8rem; right: -0.8rem; width: 70%; height: 100%;"></div>
+          <div class="col-lg-7 order-lg-2 position-relative" data-cues="slideInRight" >
+            <div class="shape bg-line yellow rounded-circle rellax d-md-block" data-rellax-speed="1" style="bottom: -1.8rem; right: -0.8rem; width: 70%; height: 100%;"></div>
             <figure><img class="img-fluid" src="./assets/img/illustrations/3d3.png" srcset="./assets/img/illustrations/3d3@2x.png 2x" alt="" /></figure>
           </div>
 
