@@ -5984,7 +5984,7 @@ textarea.form-control.is-invalid {
   border-left-color: #3f78e0;
 }
 .tooltip-inner {
-  max-width: 200px;
+  max-width: 300px;
   padding: 0.5rem 0.75rem;
   color: #fff;
   text-align: center;
