@@ -539,6 +539,12 @@ progress {
   font-size: 0.6rem;
   text-transform: uppercase;
 }
+.center_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
 .blockquote {
   margin-bottom: 1rem;
   font-size: 0.85rem;
