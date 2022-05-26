@@ -79,7 +79,7 @@
     <section class="wrapper bg-light wrapper-border">
       <div class="container pt-14 pt-md-16 pb-13 pb-md-15">
         <div class="row">
-          <div class="col-lg-10 offset-lg-1">
+          <div class="col">
             <article>
               <h2 class="display-6 mb-4">The Problem</h2>
               <div class="row gx-0 mb-17">
@@ -102,9 +102,9 @@
               </div>
               <div class="row gx-0 pt-4 pb-6 mb-7">
                 <h2 class = "display-6 mb-4">The Knowledge gaps</h2>
-                <p>Knowing when the material sets is essential because concrete is only workable until it sets, and also because setting indicates when the material will start developing strength and stiffness. But it’s quite surprising that after 2000 years of using this material, we still don’t have concrete knowledge on why concrete has this induction period and the detailed mechanics and kinetics of the setting process. The main reason for this knowledge gap is because cementitious materials are so complex. And also, there are limitations in each characterization method. So the research question is around the complexity of cementitious materials and how to study them. This is a sentence from one of my favorite papers.</p>
+                <p>Knowing when the material sets is essential because concrete is only workable until it sets, and also because setting indicates when the material will start developing strength and stiffness. But it’s quite surprising that after 2000 years of using this material, we still don’t have concrete knowledge on why concrete has this induction period and the detailed mechanics and kinetics of the setting process. The main reason for this knowledge gap is because cementitious materials are so complex. And also, there are limitations in each characterization method. So the research question is around the complexity of cementitious materials and how to study them. </p>
                 <blockquote class="icon icon-top fs-lg text-center mb-6">
-                  <p>“Concrete is a remarkably rich deposit of interesting and contemporary research questions, all contained in its ambiguities: granular or continuous?, liquid or solid?, crystalline or glassy?, smooth or rough?, “porous”, brittle or ductile?, material or process?”</p>
+                  <p>Concrete is a remarkably rich deposit of interesting and contemporary research questions, all contained in its ambiguities: granular or continuous?, liquid or solid?, crystalline or glassy?, smooth or rough?, “porous”, brittle or ductile?, material or process?</p>
                   <div class="blockquote-details justify-content-center text-center">
                     <div class="info ps-0">
                       <h5 class="mb-1">Van Damme</h5>
@@ -112,10 +112,19 @@
                     </div>
                   </div>
                 </blockquote>
-                <p>My answer to these questions is that concrete is actually all of these and that concrete is a multiscale, heterogeneous, and changing material.</p>
+                <p>The quote above is from one of my favorite papers. My answer to these questions is that concrete is actually all of these and that concrete is a multiscale, heterogeneous, and changing material.
+                And this is quantitatively and visually shown in my recent paper, which the images below are from. <a href="https://pubs.acs.org/doi/10.1021/acs.langmuir.1c00609" class="hover more link-body"><font size="-1">Langmuir</a></p>
               </div>
               <h2 class="display-6 mb-4">Data structure and dimension reduction methods</h2>
-              <p></p>
+              <p><b>A</b> Raman data is obtained using a fabricated stage that allows the in-situ Raman characteriation while the sample is curing underwater.</p>
+              <p><b>B</b> The raw data set D is 2-dimensional data (n×n<sub>s</sub>), where n=n<sub>x</sub>×n<sub>y</sub>×n<sub>t</sub> is the number of the spectrum and n<sub>s</sub> (wavenumbers) is the spectral dimension.
+                Similar to stack scan data, time-series scan data D can be batched into n<sub>t</sub> sub-data sets D according to the timestep, where n<sub>t</sub> corresponds to the number of timesteps.
+                Each D<sub>k</sub> contains the spectrum of n<sub>x</sub>×n<sub>y</sub> pixels and thus can be reshaped into a 3D array D<sub>k</sub>'. The Raman spectrum of (x<sub>i</sub>,y<sub>j</sub> ) in D<sub>k</sub>' is denoted as s<sub>(i,j,k)</sub>(ν), which is a vector with dimension n<sub>s</sub>.
+                D' is a 4D array with n<sub>x</sub>×n<sub>y</sub> spatial dimensions, n<sub>t</sub> temporal dimensions, and n<sub>s</sub> spectral dimensions. </p>
+              <p><b>C</b> <i>Dimension Reduction 1</i>: The average Raman spectra A are obtained by averaging the CCD counts of each wavenumber at every point </p>
+              <p><b>D</b> <i>Dimension Reduction 2</i>: Basis analysis (BA; similar to PCA) is used to compute the basis spectra B and phase maps C. </p>
+              <p><b>E</b> <i>Dimension Reduction 3</i>: Peak fitting analysis is performed to calculate and map the local chemical, mechanical, and crystallographic characteristics at each pixel. The position, width, and intensity of the peak at each pixel are calculated by fitting the peak profile with a Lorentzian function, which is typically used for fitting crystalline phases </p>
+
               <div class="row gx-0  mx-6 mx-md-12 mx-xl-16">
                 <img src="./assets/img/research/Figures_JACS_v2-01.jpg" alt="" class="center_img mb-12">
                 <!--/column -->
@@ -128,7 +137,7 @@
                 <!--/column -->
               </div>
               <h2 class="display-6 mb-4">Cement hydration mapping</h2>
-              <p></p>
+              <p>This figure shows one of the key results of the paper. The component distributions are shown with a heatmap, and the two-point correlation among the components are analyzed in order to quantify the hydration kinetics.</p>
               <div class="row gx-0  mx-6 mx-md-12 mx-xl-16">
                 <img src="./assets/img/research/Figures_JACS_v2-06.jpg" alt="" class="center_img mb-12">
                 <!--/column -->
