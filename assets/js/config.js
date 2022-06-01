@@ -3,7 +3,7 @@ var config = {
     accessToken: 'pk.eyJ1IjoiYXlhbWFzaGl0YTI0IiwiYSI6ImNraTlvd3N1NTBhNHMydW14c3V2Y242NGkifQ.Ej7QL5RXwMlo9fAAtqwZUg',
     showMarkers: false,
     theme: 'light',
-    alignment: 'left',
+    alignment: 'center',
     title: 'The COVID Pandemic through the Lens of Vulnerable Youth in NYC',
     subtitle: 'Was NYC prepared for this unprecedented social disaster?',
     byline: 'Final Project for 11.154/11.454 Big Data, Visualization, and Society / By Naroa Coretti Sanchez, Ayaka Yamashita, Hyun-Chae Chad Loh',
@@ -15,7 +15,7 @@ var config = {
               //image: './path/to/image/source.png',
             description: 'When the stay-at-home order and school closures went into effect, youth in NYC were subjected to the triple burden of not being able to access school meals, school playgrounds, and in-person classes. By analyzing census and NYC data, we display where the city may need to focus more in the future. In the next few maps, we will zoom in into two very different neighborhoods: The Upper East Side and Brownsville.',
             location: {
-              center: { lon: -74.26807, lat: 40.77192 },
+              center: { lon: -73.96, lat: 40.74 },
               zoom: 9.88,
               pitch: 0.00,
               bearing: 0.00
@@ -162,7 +162,7 @@ var config = {
             title: 'The 1st element: Food Access',
             description: 'Lighter color means less food access. Though the city has been doing an excellent job to combat food insecurity, the light-colored areas need improvements to avoid vulnerable youth becoming even more vulnerable during the pandemic.',
             location: {
-              center: { lon: -74.24983, lat: 40.72085 },
+              center: { lon: -73.96, lat: 40.74 },
               zoom: 10.06,
               pitch: 0.00,
               bearing: 0.00
@@ -211,7 +211,7 @@ var config = {
             //image: './path/to/image/source.png',
             description: 'Covid-19 deprived access to school playgrounds from youth, and parks became the alternative for recreational space. The green color indicates the park access index that accounts for the accessibility to parks and park budgets, meaning that the residents in greener neighborhoods have a better recreational infrastructure.',
             location: {
-              center: { lon: -74.24983, lat: 40.72085 },
+              center: { lon: -73.96, lat: 40.74  },
               zoom: 10.06,
               pitch: 0.00,
               bearing: 0.00
@@ -260,7 +260,7 @@ var config = {
             //image: './path/to/image/source.png',
             description: 'Internet became an essential infrastructure for online education during the pandemic. Less color places need more internet access.',
             location: {
-              center: { lon: -74.24983, lat: 40.72085 },
+              center: { lon: -73.96, lat: 40.74  },
               zoom: 10.06,
               pitch: 0.00,
               bearing: 0.00
@@ -309,7 +309,7 @@ var config = {
             //image: './path/to/image/source.png',
             description: 'The map shows the place with high social vulnerability with a bolder color.',
             location: {
-              center: { lon: -74.24983, lat: 40.72085 },
+              center: { lon: -73.96, lat: 40.74  },
               zoom: 10.06,
               pitch: 0.00,
               bearing: 0.00
