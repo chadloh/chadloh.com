@@ -1355,6 +1355,12 @@ progress {
   .gy-sm-25 {
     --bs-gutter-y: 22.5rem;
   }
+  .sm-text-end {
+    text-align: right;
+  }
+  .sm-text-start {
+    text-align: left;
+  }
 }
 @media (min-width: 768px) {
   .col-md {
@@ -1708,6 +1714,12 @@ progress {
   .gy-md-25 {
     --bs-gutter-y: 22.5rem;
   }
+  .md-text-end {
+    text-align: right;
+  }
+  .md-text-start {
+    text-align: left;
+  }
 }
 @media (min-width: 992px) {
   .col-lg {
@@ -2060,6 +2072,12 @@ progress {
   .g-lg-25,
   .gy-lg-25 {
     --bs-gutter-y: 22.5rem;
+  }
+  .lg-text-end {
+    text-align: right;
+  }
+  .lg-text-start {
+    text-align: left;
   }
 }
 @media (min-width: 1200px) {
