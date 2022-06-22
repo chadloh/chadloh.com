@@ -100,12 +100,13 @@
                 <div class="col text-justify">
                   <p>Initial meetings with real estate clients often involve a reality check around price expectations.
                     For example, a buyer comes in expecting they can get much more for their money than is reasonable given the market.
-                    Or a seller assumes they can get a price much higher than is typical due to anecdotal evidence that the market is much hotter than it is.
+                    Alternatively, a seller assumes they can get a price much higher than is typical due to anecdotal evidence that the market is much hotter.
                     Depending on the disconnect's severity, these meetings can be tense and time-consuming as they are less likely to end in a transaction.</p>
-                  <p>Predicting the house price with the house features is a common machine learning topic. And the <b>neighborhood</b> is usually an important factor that influences the housing prices.
-                    However, neighborhoods are seldom arbitrarily defined. Sometimes there are neighborhoods within a broader neighborhood. Sometimes the neighborhoods are just a few blocks of houses.
-                    What if we could estimate the <b>geographic value</b> of the house instead of labeling each house with a few pre-defined neighborhoods? Could this continuous feature improve the price prediction model?
-                    This project explores the housing sales data in Ames, IA. Various machine learning models were explored, and the final results were deployed in a preliminary Shiny app.</p>
+                  <p>Predicting the house price with the house features is a standard machine learning topic. And the neighborhood is usually an essential factor that influences the housing prices.
+                    However, neighborhoods are seldom arbitrarily defined. Sometimes there are neighborhoods within a broader neighborhood, and sometimes the neighborhoods consist of just a few blocks.
+                    What if we could estimate the geographic value of the house instead of labeling each house with a few pre-defined neighborhoods?
+                    Could this continuous feature improve the price prediction model? This project explores the housing sales data in Ames, IA.
+                    Various machine learning models were explored, and the final results were deployed in a preliminary interactive dashboard (R Shiny).</p>
                 </div>
               </div>
               <div class = "row mb-17">
@@ -113,11 +114,13 @@
                 <h4>Visualization of the neighborhoods</h4>
                 <div class="col-12 text-justify">
                   <p>
-                    As seen from one of my previous projects, <a href="./nycbuilding.html" class="hover">New York City: Booms and Blooms</font></a>, neighborhoods bloom through a series of construction booms and development in the city/town.
-                    The age of the houses are first visualized in the image below. As the neighborhood name indicates, the <b>Old Town</b> neighborhood was the oldest neighborhood in Ames.
-                    And new neighborhoods formed one-by-one around the Old Town and became the current Ames. The newest neighborhoods were in the perimeter of the town.
-                    The second map shows the sale price for each house. As expected, most of the houses sold with high prices (> $400,000) are found in the newer neighborhoods.
-                    Especially, the house sale prices in Northridge Heights and Northridge neighborhoods were more than 2x the price of the median house sale price (~$160,000).
+                    As seen in one of my previous projects, <a href="./nycbuilding.html" class="hover">New York City: Booms and Blooms</font></a>, neighborhoods bloom through a series of construction booms and development in the city/town.
+                    The age of the houses is first visualized in the image below. As the neighborhood name indicates, the Old Town neighborhood was the oldest in Ames.
+                    And then, new neighborhoods formed one-by-one around the Old Town and became the current Ames. The newest neighborhoods were near the town perimeter.
+                  </p>
+                  <p>
+                    The second map shows the sale price for each house. As expected, most houses sold at high prices (> $400,000) are found in the newer neighborhoods.
+                    Significantly, the house sale prices in Northridge Heights and Northridge neighborhoods were more than 2x the price of the median house sale price (~$160,000).
                   </p>
                 </div>
                 <div class="col-lg-6 gx-6 pt-4 pb-6">
@@ -128,8 +131,7 @@
                 </div>
                 <div class="col">
                   <p>
-                    Most of the houses in Ames, IA are Single family houses. And the median of the house sales price was around $160,000 in 2006-2010.
-                    The price is then plotted against the square footage of the living area. There is a high correlation between the housing price and the area, as shown with a regression line (blue).
+                    Most of the houses in Ames are single-family houses. And the median house sales price was around $160,000 from 2006-2010. The price is then plotted against the square footage of the living area. There is a high correlation between the housing price and the area, as shown with a regression line (blue).
                   </p>
                 </div>
                 <div class="col-12 pt-4 pb-6 px-lg-20">
@@ -138,9 +140,8 @@
                 <div class="col">
                   <p>
                     For a fair comparison among houses, we can divide the sales price by the area to obtain the price per ft<sup>2</sup>.
-                    Two of the most controlling factor of the housing price were the overall quality and condition of the houses.
-                    The average price per ft<sup>2</sup> is compared with the overall quality and condition.
-                    As expected, houses with high built quality and in good condition were valued more.
+                    Two of the most controlling factors of the housing price were the overall quality and condition of the houses and the average price per ft<sup>2</sup>.
+                    As expected, houses with high quality and in good condition were valued more.
                   </p>
                 </div>
                 <div class="col-12 pt-4 pb-6 px-lg-20">
@@ -151,14 +152,15 @@
               <div class = "row mb-17">
                 <h2 class="display-6 mb-4">👨‍🔧 Feature engineering</h2>
                 <p>
-                  The neighborhood was labeled inconsistently, and the sizes of the neighborhoods (i.e., the number of houses in each neighborhood) varied. Some neighborhoods had less than ten sales data, which could result in overfitting.
-                  Instead of using a categorical feature, we engineered a new numerical feature that is related to the geographic value.
+                  The neighborhood was labeled inconsistently, and the sizes of the neighborhoods (i.e., the number of houses in each neighborhood) varied.
+                  Some neighborhoods had less than ten sales data, which could result in overfitting.
+                  Instead of using a categorical feature, we engineered a new numerical feature related to the geographic value.
                   The geographic value is determined after the model is trained.
                 </p>
                 <p>
-                  The geographic value indicates how much value is added to the house for being at that location.
-                  The same house with the same features will have a higher price if the geographical value is higher.
-                  Using this feature, we can estimate the house price without labeling it in a certain neighborhood.
+                  The geographic value indicates the value added to the house for being at that location.
+                  The same house with the same features will have a higher price if the geographical value is high.
+                  Using this feature, we can estimate the house price without labeling it in a specific neighborhood.
                   Interestingly, the geographic value correlated with the crime rate – regions with higher crime rates have lower geographic values.
                 </p>
                 <div class="col-lg-6 gx-6 pt-4 pb-6">
@@ -174,16 +176,16 @@
                 <div class="col text-justify">
                   <h2 class="display-6 mb-4">🦾 Machine Learning Algorithms</h2>
                   <p>
-                    Initially, the dataframe included 145 features (including the one-hot encoded and engineered features).
-                    This was reduced to 45 through exploratory data analysis, and finally, the features were reduced to 32 using Lasso Regression.
-                    The data were then split into the train (70%) and test (30%) datasets.
+                    Initially, the data frame included 145 features (including the one-hot encoded and engineered features),
+                    which were reduced to 45 features through exploratory data analysis, and finally, the features were reduced to 32 using Lasso Regression.
+                    The data were split into the train (70%) and test (30%) datasets.
                   </p>
                   <h4>Multiple Linear Regression</h4>
                   <p>
                     First, the Lasso Regression model was used to eliminate insignificant features.
                     The graph below shows the coefficients of some variables with different lambda values (log-scale).
-                    The features that “survive” longer up to a high lambda value have a larger contribution (either positive or negative) to the price.
-                    For example, the quality and condition have a large impact on the house price.
+                    The features that "survive" longer up to a high lambda value have a more significant contribution (either positive or negative) to the price.
+                    For example, the quality and condition significantly impact the house price.
                   </p>
                 </div>
                 <div class="col-12 pt-4 pb-6 px-lg-20">
@@ -191,8 +193,9 @@
                 </div>
                 <div class="col text-justify">
                   <p>
-                    Then, the Ridge regression model was trained. Grid search with cross-validation (3 folds) identified lambda of 0.0032 to be the best for the Ridge model and returned an R-squared of 0.900.
-                    The figures below show how the prediction compares to the actual sales price. And the residual map shows which house the pricing model is overestimating (red) and underestimating (blue).
+                    Then, the Ridge regression model was trained. Grid search with cross-validation (3 folds) identified lambda of 0.0032 as the best for the Ridge model
+                    and returned an R<sup>2</sup> of 0.900. The figures below show how the prediction compares to the actual sales price.
+                    And the residual map shows which house the pricing model is overestimating (red) and underestimating (blue).
                   </p>
                 </div>
                 <div class="col-12 pt-4 pb-6 px-lg-20">
@@ -299,11 +302,11 @@
                 <div class="col text-justify">
                   <h2 class="display-6 mb-4">📝 Conclusion</h2>
                   <ul>
-                    <li>While many factors affect house prices; squarefootage, overall quality and condition are consistently shown as important features.</li>
-                    <li>We were able to successfully predict house prices with ML models achieving R<sup>2</sup>scores from 0.90 to 0.92.</li>
-                    <li>Created a framework for estimating the geographical value based on historic data and machine learning techniques.</li>
-                    <li>Implemented various ML approaches with new features, improving upon the initial linear regression model with all 145 features included. </li>
-                    <li>Developed an interactive web based application that allows users to explore house prices and generate predictions.</li>
+                    <li>While many factors affect house prices, square footage, overall quality, and condition are consistently shown as essential features.</li>
+                    <li>We successfully predicted house prices with ML models achieving R<sup>2</sup> scores from 0.90 to 0.92.</li>
+                    <li>We have created a framework for estimating the geographical value based on historic data and machine learning techniques.</li>
+                    <li>Implemented various ML approaches with new features, improving the initial linear regression model. </li>
+                    <li>We developed an interactive web-based application that allows users to explore house prices and generate predictions.</li>
                   </ul>
                 </div>
               </div>
@@ -311,7 +314,7 @@
               <div>
                 <h5 class="mb-1">Data Source</h5>
                 <ul>
-                  <li>Ames, IA housing sales data</li>
+                  <li>Ames, IA housing sales data : The Ames Housing dataset was compiled by Dean De Cock for use in data science education</li>
                 </ul>
               </div>
               <!--/.row -->

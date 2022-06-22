@@ -181,7 +181,7 @@
                     GPS locations are generally estimated using a Weighted Least Squared (WLS) technique.
                     When the satellite locations are S<sub>i</sub>, the location X is where the weighted sum of the squared error Σ(r<sub>i</sub> - d<sub>i</sub>)<sup>2</sup> is minimal.
                   </p>
-                  <div class="gx-6 pt-4 pb-6 px-lg-16">
+                  <div class="gx-6 pt-4 pb-6 px-lg-22">
                     <figure class="rounded"><img src="./assets/img/decimeter/img-02.png" alt="" /></figure>
                   </div>
                 </div>
@@ -218,8 +218,11 @@
                   The approximated locations of the device during the trip is obtained with the Kalman filter. This new approximation could also be used in the point positioning optimization process.
                   If we think that there is a satellite at the center of Earth (hence, pseudo-satellite estimate), we can use the distance to the Kalman filter estimate as a new pseudorange.
                 </p>
-                <div class="gx-6 pt-4 pb-6 px-lg-16">
-                  <figure class="rounded"><img src="./assets/img/decimeter/img-10.png" alt="" /></figure>
+                <div class="col-lg-6 gx-16 pt-4 pb-6">
+                  <figure class="rounded"><img src="./assets/img/decimeter/img-05.png" alt="" /></figure>
+                </div>
+                <div class="col-lg-6 gx-16 pt-4 pb-6">
+                  <figure class="rounded"><img src="./assets/img/decimeter/img-06.png" alt="" /></figure>
                 </div>
                 <h4>Signal Angle Penalization</h4>
                 <p>
@@ -227,8 +230,11 @@
                   Since the data is collected during drives, we can assume that there are more obstructions on the car's sides (x-axis in the car-centered coordinate system)
                   than along the driving direction (y-axis in the car-centered coordinate system). We can multiply the weight in the WLS optimization by 2+abs(cos(angle)) to penalize the signals from the sides.
                 </p>
-                <div class="gx-6 pt-4 pb-6 px-lg-16">
-                  <figure class="rounded"><img src="./assets/img/decimeter/img-11.png" alt="" /></figure>
+                <div class="col-lg-6 gx-16 pt-4 pb-6">
+                  <figure class="rounded"><img src="./assets/img/decimeter/img-07.png" alt="" /></figure>
+                </div>
+                <div class="col-lg-6 gx-16 pt-4 pb-6">
+                  <figure class="rounded"><img src="./assets/img/decimeter/img-08.png" alt="" /></figure>
                 </div>
               </div>
               <div class = "row mb-17">
@@ -243,16 +249,16 @@
                 <div>
                   <iframe src="https://chart-studio.plotly.com/~chadloh/1.embed" title="Satellites", width = 100%, height = 400></iframe>
                 </div>
+                <div class="gx-6 pt-4 pb-6 px-lg-16">
+                  <figure class="rounded"><img src="./assets/img/decimeter/img-09.png" alt="" /></figure>
+                </div>
                 <p>
                   The two plots below compare the errors of the baseline and advanced Kalman filter estimates.
                   Any datapoint with an error larger than 5m is shown in yellow.
                   We can clearly see that most of the points have an GPS error lower than 5 meters after the Kalman filter.
                 </p>
-                <div>
-                  <iframe src="https://chart-studio.plotly.com/~chadloh/25.embed" title="Satellites", width = 100%, height = 400></iframe>
-                </div>
-                <div>
-                  <iframe src="https://chart-studio.plotly.com/~chadloh/5.embed" title="Satellites", width = 100%, height = 400></iframe>
+                <div class="gx-6 pt-4 pb-6 px-lg-16">
+                  <figure class="rounded"><img src="./assets/img/decimeter/img-10.png" alt="" /></figure>
                 </div>
                 <p>
                   Finally, the distribution of the errors are plotted as density plots. The baseline errors were much larger with many outlier datapoints.
@@ -275,7 +281,7 @@
 
                   </p>
                   <div class="gx-6 pt-4 pb-6 px-lg-16">
-                    <figure class="rounded"><img src="./assets/img/decimeter/img-17.png" alt="" /></figure>
+                    <figure class="rounded"><img src="./assets/img/decimeter/img-12.png" alt="" /></figure>
                   </div>
                 </div>
               </div>
