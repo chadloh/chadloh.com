@@ -94,250 +94,243 @@
     <!-- /section -->
     <section class="wrapper bg-light wrapper-border">
       <div class="container pt-14 pt-md-16 pb-13 pb-md-15">
-        <div class="row">
-          <div class="col">
-            <article>
-              <h2 class="display-6 mb-4">🛒 Introduction</h2>
-              <div class="row gx-0 mb-17">
-                <div class="col text-justify">
-                  <p>Initial meetings with real estate clients often involve a reality check around price expectations.
-                    For example, a buyer comes in expecting they can get much more for their money than is reasonable given the market.
-                    Alternatively, a seller assumes they can get a price much higher than is typical due to anecdotal evidence that the market is much hotter.
-                    Depending on the disconnect's severity, these meetings can be tense and time-consuming as they are less likely to end in a transaction.</p>
-                  <p>Predicting the house price with the house features is a standard machine learning topic. And the neighborhood is usually an essential factor that influences the housing prices.
-                    However, neighborhoods are seldom arbitrarily defined. Sometimes there are neighborhoods within a broader neighborhood, and sometimes the neighborhoods consist of just a few blocks.
-                    What if we could estimate the geographic value of the house instead of labeling each house with a few pre-defined neighborhoods?
-                    Could this continuous feature improve the price prediction model? This project explores the housing sales data in Ames, IA.
-                    Various machine learning models were explored, and the final results were deployed in a preliminary interactive dashboard (R Shiny).</p>
-                </div>
-              </div>
-              <div class = "row mb-17">
-                <h2 class="display-6 mb-4">🖥️ Exploratory data analysis</h2>
-                <h4>Visualization of the neighborhoods</h4>
-                <div class="col-12 text-justify">
-                  <p>
-                    As seen in one of my previous projects, <a href="./nycbuilding.html" class="hover">New York City: Booms and Blooms</font></a>, neighborhoods bloom through a series of construction booms and development in the city/town.
-                    The age of the houses is first visualized in the image below. As the neighborhood name indicates, the Old Town neighborhood was the oldest in Ames.
-                    And then, new neighborhoods formed one-by-one around the Old Town and became the current Ames. The newest neighborhoods were near the town perimeter.
-                  </p>
-                  <p>
-                    The second map shows the sale price for each house. As expected, most houses sold at high prices (> $400,000) are found in the newer neighborhoods.
-                    Significantly, the house sale prices in Northridge Heights and Northridge neighborhoods were more than 2x the price of the median house sale price (~$160,000).
-                  </p>
-                </div>
-                <div class="col-lg-6 gx-6 pt-4 pb-6">
-                  <figure class="rounded"><img src="./assets/img/proj3/Blogimages-01.jpg" alt="" /></figure>
-                </div>
-                <div class="col-lg-6 gx-6 pt-4 pb-6">
-                  <figure class="rounded"><img src="./assets/img/proj3/Blogimages-02.jpg" alt="" /></figure>
-                </div>
-                <div class="col">
-                  <p>
-                    Most of the houses in Ames are single-family houses. And the median house sales price was around $160,000 from 2006-2010. The price is then plotted against the square footage of the living area. There is a high correlation between the housing price and the area, as shown with a regression line (blue).
-                  </p>
-                </div>
-                <div class="col-12 pt-4 pb-6 px-lg-20">
-                  <figure class="rounded"><img src="./assets/img/proj3/Blogimages-03.jpg" alt="" /></figure>
-                </div>
-                <div class="col">
-                  <p>
-                    For a fair comparison among houses, we can divide the sales price by the area to obtain the price per ft<sup>2</sup>.
-                    Two of the most controlling factors of the housing price were the overall quality and condition of the houses and the average price per ft<sup>2</sup>.
-                    As expected, houses with high quality and in good condition were valued more.
-                  </p>
-                </div>
-                <div class="col-12 pt-4 pb-6 px-lg-20">
-                  <figure class="rounded"><img src="./assets/img/proj3/Blogimages-04.jpg" alt="" /></figure>
-                </div>
-
-              </div>
-              <div class = "row mb-17">
-                <h2 class="display-6 mb-4">👨‍🔧 Feature engineering</h2>
-                <p>
-                  The neighborhood was labeled inconsistently, and the sizes of the neighborhoods (i.e., the number of houses in each neighborhood) varied.
-                  Some neighborhoods had less than ten sales data, which could result in overfitting.
-                  Instead of using a categorical feature, we engineered a new numerical feature related to the geographic value.
-                  The geographic value is determined after the model is trained.
-                </p>
-                <p>
-                  The geographic value indicates the value added to the house for being at that location.
-                  The same house with the same features will have a higher price if the geographical value is high.
-                  Using this feature, we can estimate the house price without labeling it in a specific neighborhood.
-                  Interestingly, the geographic value correlated with the crime rate – regions with higher crime rates have lower geographic values.
-                </p>
-                <div class="col-lg-6 gx-6 pt-4 pb-6">
-                  <figure class="rounded"><img src="./assets/img/proj3/geovalue.gif" alt="" /></figure>
-                </div>
-                <div class="col-lg-6 gx-6 pt-4 pb-6">
-                  <figure class="rounded"><img src="./assets/img/proj3/Blogimages-07.jpg" alt="" /></figure>
-                </div>
-                <p>
-                  We can also visualize the geographic value in 3D, where the height of the surface corresponds to the geographic value (see below).<br>
-                  One of the notable locations is the Iowa State University Campus town (the peak at the front).
-                  The houses around this area has a higher value since Ames is a college town.
-                </p>
-                <div class="col gx-6 pt-4 pb-6 px-22">
-                  <figure class="rounded"><img src="./assets/img/proj3/Blogimages-08.jpg" alt="" /></figure>
-                </div>
-              </div>
-
-
-              <div class = "row mb-17">
-                <div class="col text-justify">
-                  <h2 class="display-6 mb-4">🦾 Machine Learning Algorithms</h2>
-                  <p>
-                    Initially, the data frame included 145 features (including the one-hot encoded and engineered features),
-                    which were reduced to 45 features through exploratory data analysis, and finally, the features were reduced to 32 using Lasso Regression.
-                    The data were split into the train (70%) and test (30%) datasets.
-                  </p>
-                  <h4>Multiple Linear Regression</h4>
-                  <p>
-                    First, the Lasso Regression model was used to eliminate insignificant features.
-                    The graph below shows the coefficients of some variables with different lambda values (log-scale).
-                    The features that "survive" longer up to a high lambda value have a more significant contribution (either positive or negative) to the price.
-                    For example, the quality and condition significantly impact the house price.
-                  </p>
-                </div>
-                <div class="col-12 pt-4 pb-6 px-lg-20">
-                  <figure class="rounded"><img src="./assets/img/proj3/Blogimages-09.jpg" alt="" /></figure>
-                </div>
-                <div class="col text-justify">
-                  <p>
-                    Then, the Ridge regression model was trained. Grid search with cross-validation (3 folds) identified lambda of 0.0032 as the best for the Ridge model
-                    and returned an R<sup>2</sup> of 0.900. The figures below show how the prediction compares to the actual sales price.
-                    And the residual map shows which house the pricing model is overestimating (red) and underestimating (blue).
-                  </p>
-                </div>
-                <div class="col-12 pt-4 pb-6 px-lg-20">
-                  <figure class="rounded"><img src="./assets/img/proj3/Blogimages-10.jpg" alt="" /></figure>
-                </div>
-                <div class="col text-justify">
-                  <h4>Other ML methods</h4>
-                  <p>
-                    Other machine learning methods were also tested. The test results with the best parameters are summarized in the table below.
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">Method</th>
-                          <th scope="col">Best R<sup>2</sup> score</th>
-                          <th scope="col">Hyperparameters</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      <tr>
-                        <th scope="row">Lasso Regression</th>
-                        <td>0.900</td>
-                        <td>
-                          <ul>
-                            <li>CV = 3</li>
-                            <li>Lambda = 10<sup>-5</sup></li>
-                            <li>Normalization</li>
-                          </ul>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Ridge Regression</th>
-                        <td>0.900</td>
-                        <td>
-                          <ul>
-                            <li>CV = 3</li>
-                            <li>Lambda = 0.0032</li>
-                            <li>Normalization</li>
-                          </ul>
-                        </td>
-                      </tr>
-                        <tr>
-                          <th scope="row">SVR</th>
-                          <td>0.918</td>
-                          <td>
-                            <ul>
-                              <li>RBF kernel</li>
-                              <li>epsilon = 0.1</li>
-                              <li>gamma = 0.01</li>
-                            </ul>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Random Forest</th>
-                          <td>0.899</td>
-                          <td>
-                            <ul>
-                              <li>500 trees</li>
-                              <li>7 max features</li>
-                              <li>subsample = 0.8</li>
-                              <li>column sample = 0.8</li>
-                            </ul>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Boosting</th>
-                          <td>0.922</td>
-                          <td>
-                            <ul>
-                              <li>5000 trees</li>
-                              <li>7 max features</li>
-                              <li>learning rate = 0.01</li>
-                            </ul>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row">XG Boosting</th>
-                          <td>0.923</td>
-                          <td>
-                            <ul>
-                              <li>5000 trees</li>
-                              <li>7 max features</li>
-                              <li>learning rate = 0.01</li>
-                              <li>gamma = 0.01</li>
-                              <li>subsample = 0.8</li>
-                              <li>column sample = 0.8</li>
-                            </ul>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class = "row mb-17">
-                <div class="col text-justify">
-                  <h2 class="display-6 mb-4">📱 Shiny App</h2>
-                  <h4>This app is best viewed on large screens</h4>
-                  <iframe height="1080" width="100%" frameborder="no" src="https://rixpc2-chad-loh.shinyapps.io/Ames-price-prediction/"> </iframe>
-                </div>
-              </div>
-              <div class = "row mb-17">
-                <div class="col text-justify">
-                  <h2 class="display-6 mb-4">📝 Conclusion</h2>
-                  <ul>
-                    <li>While many factors affect house prices, square footage, overall quality, and condition are consistently shown as essential features.</li>
-                    <li>We successfully predicted house prices with ML models achieving R<sup>2</sup> scores from 0.90 to 0.92.</li>
-                    <li>We have created a framework for estimating the geographical value based on historic data and machine learning techniques.</li>
-                    <li>Implemented various ML approaches with new features, improving the initial linear regression model. </li>
-                    <li>We developed an interactive web-based application that allows users to explore house prices and generate predictions.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class = "row mb-17">
-                <p>
-                 This project is developed by Chad Loh, James Reno, Michelle Bui, and Alex Galczak
-                </p>
-              </div>
-              <div>
-                <h5 class="mb-1">Data Source</h5>
-                <ul>
-                  <li>Ames, IA housing sales data : The Ames Housing dataset was compiled by Dean De Cock for use in data science education</li>
-                </ul>
-              </div>
-              <!--/.row -->
-            </article>
-            <!-- /.project -->
+        <article>
+          <h2 class="display-6 mb-4">🛒 Introduction</h2>
+          <div class="row gx-0 mb-17">
+            <div class="col text-justify">
+              <p>Initial meetings with real estate clients often involve a reality check around price expectations.
+                For example, a buyer comes in expecting they can get much more for their money than is reasonable given the market.
+                Alternatively, a seller assumes they can get a price much higher than is typical due to anecdotal evidence that the market is much hotter.
+                Depending on the disconnect's severity, these meetings can be tense and time-consuming as they are less likely to end in a transaction.</p>
+              <p>Predicting the house price with the house features is a standard machine learning topic. And the neighborhood is usually an essential factor that influences the housing prices.
+                However, neighborhoods are seldom arbitrarily defined. Sometimes there are neighborhoods within a broader neighborhood, and sometimes the neighborhoods consist of just a few blocks.
+                What if we could estimate the geographic value of the house instead of labeling each house with a few pre-defined neighborhoods?
+                Could this continuous feature improve the price prediction model? This project explores the housing sales data in Ames, IA.
+                Various machine learning models were explored, and the final results were deployed in a preliminary interactive dashboard (R Shiny).</p>
+            </div>
           </div>
-          <!-- /column -->
-        </div>
-        <!-- /.row -->
+          <div class = "row mb-17">
+            <h2 class="display-6 mb-4">🖥️ Exploratory data analysis</h2>
+            <h4>Visualization of the neighborhoods</h4>
+            <div class="col-12 text-justify">
+              <p>
+                As seen in one of my previous projects, <a href="./nycbuilding.html" class="hover">New York City: Booms and Blooms</font></a>, neighborhoods bloom through a series of construction booms and development in the city/town.
+                The age of the houses is first visualized in the image below. As the neighborhood name indicates, the Old Town neighborhood was the oldest in Ames.
+                And then, new neighborhoods formed one-by-one around the Old Town and became the current Ames. The newest neighborhoods were near the town perimeter.
+              </p>
+              <p>
+                The second map shows the sale price for each house. As expected, most houses sold at high prices (> $400,000) are found in the newer neighborhoods.
+                Significantly, the house sale prices in Northridge Heights and Northridge neighborhoods were more than 2x the price of the median house sale price (~$160,000).
+              </p>
+            </div>
+            <div class="col-lg-6 gx-6 pt-4 pb-6">
+              <figure class="rounded"><img src="./assets/img/proj3/Blogimages-01.jpg" alt="" /></figure>
+            </div>
+            <div class="col-lg-6 gx-6 pt-4 pb-6">
+              <figure class="rounded"><img src="./assets/img/proj3/Blogimages-02.jpg" alt="" /></figure>
+            </div>
+            <div class="col">
+              <p>
+                Most of the houses in Ames are single-family houses. And the median house sales price was around $160,000 from 2006-2010. The price is then plotted against the square footage of the living area. There is a high correlation between the housing price and the area, as shown with a regression line (blue).
+              </p>
+            </div>
+            <div class="col-12 pt-4 pb-6 px-lg-20">
+              <figure class="rounded"><img src="./assets/img/proj3/Blogimages-03.jpg" alt="" /></figure>
+            </div>
+            <div class="col">
+              <p>
+                For a fair comparison among houses, we can divide the sales price by the area to obtain the price per ft<sup>2</sup>.
+                Two of the most controlling factors of the housing price were the overall quality and condition of the houses and the average price per ft<sup>2</sup>.
+                As expected, houses with high quality and in good condition were valued more.
+              </p>
+            </div>
+            <div class="col-12 pt-4 pb-6 px-lg-20">
+              <figure class="rounded"><img src="./assets/img/proj3/Blogimages-04.jpg" alt="" /></figure>
+            </div>
+
+          </div>
+          <div class = "row mb-17">
+            <h2 class="display-6 mb-4">👨‍🔧 Feature engineering</h2>
+            <p>
+              The neighborhood was labeled inconsistently, and the sizes of the neighborhoods (i.e., the number of houses in each neighborhood) varied.
+              Some neighborhoods had less than ten sales data, which could result in overfitting.
+              Instead of using a categorical feature, we engineered a new numerical feature related to the geographic value.
+              The geographic value is determined after the model is trained.
+            </p>
+            <p>
+              The geographic value indicates the value added to the house for being at that location.
+              The same house with the same features will have a higher price if the geographical value is high.
+              Using this feature, we can estimate the house price without labeling it in a specific neighborhood.
+              Interestingly, the geographic value correlated with the crime rate – regions with higher crime rates have lower geographic values.
+            </p>
+            <div class="col-lg-6 gx-6 pt-4 pb-6">
+              <figure class="rounded"><img src="./assets/img/proj3/geovalue.gif" alt="" /></figure>
+            </div>
+            <div class="col-lg-6 gx-6 pt-4 pb-6">
+              <figure class="rounded"><img src="./assets/img/proj3/Blogimages-07.jpg" alt="" /></figure>
+            </div>
+            <p>
+              We can also visualize the geographic value in 3D, where the height of the surface corresponds to the geographic value (see below).<br>
+              One of the notable locations is the Iowa State University Campus town (the peak at the front).
+              The houses around this area has a higher value since Ames is a college town.
+            </p>
+            <div class="col gx-6 pt-4 pb-6 px-22">
+              <figure class="rounded"><img src="./assets/img/proj3/Blogimages-08.jpg" alt="" /></figure>
+            </div>
+          </div>
+
+
+          <div class = "row mb-17">
+            <div class="col text-justify">
+              <h2 class="display-6 mb-4">🦾 Machine Learning Algorithms</h2>
+              <p>
+                Initially, the data frame included 145 features (including the one-hot encoded and engineered features),
+                which were reduced to 45 features through exploratory data analysis, and finally, the features were reduced to 32 using Lasso Regression.
+                The data were split into the train (70%) and test (30%) datasets.
+              </p>
+              <h4>Multiple Linear Regression</h4>
+              <p>
+                First, the Lasso Regression model was used to eliminate insignificant features.
+                The graph below shows the coefficients of some variables with different lambda values (log-scale).
+                The features that "survive" longer up to a high lambda value have a more significant contribution (either positive or negative) to the price.
+                For example, the quality and condition significantly impact the house price.
+              </p>
+            </div>
+            <div class="col-12 pt-4 pb-6 px-lg-20">
+              <figure class="rounded"><img src="./assets/img/proj3/Blogimages-09.jpg" alt="" /></figure>
+            </div>
+            <div class="col text-justify">
+              <p>
+                Then, the Ridge regression model was trained. Grid search with cross-validation (3 folds) identified lambda of 0.0032 as the best for the Ridge model
+                and returned an R<sup>2</sup> of 0.900. The figures below show how the prediction compares to the actual sales price.
+                And the residual map shows which house the pricing model is overestimating (red) and underestimating (blue).
+              </p>
+            </div>
+            <div class="col-12 pt-4 pb-6 px-lg-20">
+              <figure class="rounded"><img src="./assets/img/proj3/Blogimages-10.jpg" alt="" /></figure>
+            </div>
+            <div class="col text-justify">
+              <h4>Other ML methods</h4>
+              <p>
+                Other machine learning methods were also tested. The test results with the best parameters are summarized in the table below.
+              </p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Method</th>
+                      <th scope="col">Best R<sup>2</sup> score</th>
+                      <th scope="col">Hyperparameters</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <th scope="row">Lasso Regression</th>
+                    <td>0.900</td>
+                    <td>
+                      <ul>
+                        <li>CV = 3</li>
+                        <li>Lambda = 10<sup>-5</sup></li>
+                        <li>Normalization</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Ridge Regression</th>
+                    <td>0.900</td>
+                    <td>
+                      <ul>
+                        <li>CV = 3</li>
+                        <li>Lambda = 0.0032</li>
+                        <li>Normalization</li>
+                      </ul>
+                    </td>
+                  </tr>
+                    <tr>
+                      <th scope="row">SVR</th>
+                      <td>0.918</td>
+                      <td>
+                        <ul>
+                          <li>RBF kernel</li>
+                          <li>epsilon = 0.1</li>
+                          <li>gamma = 0.01</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Random Forest</th>
+                      <td>0.899</td>
+                      <td>
+                        <ul>
+                          <li>500 trees</li>
+                          <li>7 max features</li>
+                          <li>subsample = 0.8</li>
+                          <li>column sample = 0.8</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Boosting</th>
+                      <td>0.922</td>
+                      <td>
+                        <ul>
+                          <li>5000 trees</li>
+                          <li>7 max features</li>
+                          <li>learning rate = 0.01</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">XG Boosting</th>
+                      <td>0.923</td>
+                      <td>
+                        <ul>
+                          <li>5000 trees</li>
+                          <li>7 max features</li>
+                          <li>learning rate = 0.01</li>
+                          <li>gamma = 0.01</li>
+                          <li>subsample = 0.8</li>
+                          <li>column sample = 0.8</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class = "row mb-17">
+            <div class="col text-justify">
+              <h2 class="display-6 mb-4">📱 Shiny App</h2>
+              <h4>This app is best viewed on large screens</h4>
+              <iframe height="1080" width="100%" frameborder="no" src="https://rixpc2-chad-loh.shinyapps.io/Ames-price-prediction/"> </iframe>
+            </div>
+          </div>
+          <div class = "row mb-17">
+            <div class="col text-justify">
+              <h2 class="display-6 mb-4">📝 Conclusion</h2>
+              <ul>
+                <li>While many factors affect house prices, square footage, overall quality, and condition are consistently shown as essential features.</li>
+                <li>We successfully predicted house prices with ML models achieving R<sup>2</sup> scores from 0.90 to 0.92.</li>
+                <li>We have created a framework for estimating the geographical value based on historic data and machine learning techniques.</li>
+                <li>Implemented various ML approaches with new features, improving the initial linear regression model. </li>
+                <li>We developed an interactive web-based application that allows users to explore house prices and generate predictions.</li>
+              </ul>
+            </div>
+          </div>
+          <div class = "row mb-17">
+            <p>
+             This project is developed by Chad Loh, James Reno, Michelle Bui, and Alex Galczak
+            </p>
+          </div>
+          <div>
+            <h5 class="mb-1">Data Source</h5>
+            <ul>
+              <li>Ames, IA housing sales data : The Ames Housing dataset was compiled by Dean De Cock for use in data science education</li>
+            </ul>
+          </div>
+          <!--/.row -->
+        </article>
       </div>
     </section>
     <!-- /section -->
