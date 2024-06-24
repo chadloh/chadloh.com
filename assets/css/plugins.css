@@ -5909,8 +5909,10 @@ a.plyr__control::before {
 /* PrismJS 1.24.1 */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #4EC9B0;
-  background: none;
+  /* color: #1E1E1E; */
+  /* background: none; */
+  border-radius: 1em;
+  background-color: #f6faff;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;

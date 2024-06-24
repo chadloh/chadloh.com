@@ -14,6 +14,9 @@
   <script src="https://d3js.org/d3.v4.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8ZS83VSS9"></script>
+  <!-- Code Highligher -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -45,6 +48,7 @@
                 <li class="nav-item"><a class="nav-link scroll active" href="#home">Home</a></li>
                 <li class="nav-item"><a class="nav-link scroll" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link scroll" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link scroll" href="#data-viz">Data Viz</a></li>
                 <li class="nav-item"><a class="nav-link scroll" href="#contact">Contact</a></li>
               </ul>
               <!-- /.navbar-nav -->
@@ -114,6 +118,9 @@
       </div>
       <!-- /.wrapper -->
     </section>
+    
+    
+
     <!-- /section -->
     <section id="about" data-group="page-about" data-delay="400">
 
@@ -748,7 +755,6 @@
               </div>
               <!-- /.project-details -->
             </div>
-
           </div>
           <!-- /.row -->
         </div>
@@ -756,6 +762,38 @@
       </div>
       <!-- /.container -->
     </section>
+
+    <!-- /DATA VIZ SECTION -->
+    <section id="data-viz" data-group="page-data-viz" data-delay="400">
+      <div class="wrapper bg-soft-primary angled upper-start lower-end">
+        <div class="container py-14 py-md-16">
+          <h1 class="display-2 popout mb-8">
+            <span>D</span><span>A</span><span>T</span><span>A</span> <span>V</span><span>I</span><span>Z</span>
+          </h1>
+          <div class="row">
+            <div class="col-xl-12 mx-auto">
+              <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-400" data-image-src="./assets/img/data.jpg">
+                <div class="card-body p-6 p-md-11 d-lg-flex flex-row align-items-lg-center justify-content-md-between text-center text-lg-start">
+                  <h3 class="display-6 mb-6 mb-lg-0 pe-lg-10 pe-xl-5 pe-xxl-18 text-white">
+                    Ever wondered how to make compelling data viz? Join me on this blog as we explore Pandas, Plotly, and Illustrator, tools that breathe life into numbers.
+                    I'll guide you through the process, sharing insights and techniques I've learned along the way.
+                  </h3>
+                  <a href="./datavizblog.html" class="btn btn-white rounded-pill mb-0 text-nowrap">Let's Get Visual! 👀</a>
+                </div>
+                <!--/.card-body -->
+              </div>
+              <!--/.card -->
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+    </section>
+    <!-- /section -->
+
+    <!-- /CONTACT SECTION -->
     <section id="contact" class="wrapper bg-light">
       <div class="container py-14 py-md-16">
         <div class="row gy-10 gx-lg-8 gx-xl-12 align-items-center">
@@ -790,7 +828,6 @@
         <!--/.row -->
       </div>
       <!-- /section -->
-
     </section>
     <!-- /section -->
   </div>
@@ -811,6 +848,8 @@
   </div>
   <script src="./assets/js/plugins.js"></script>
   <script src="./assets/js/theme.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </body>
 
 </html>

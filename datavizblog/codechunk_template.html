@@ -1,0 +1,26 @@
+<!-- CODECARD -->
+<div class="card border-primary col-12 mt-6"><div class="card-body row px-2 py-2"><pre><code class="language-python">fig = go.Figure()
+    for i, borough in enumerate(NYC_BOROUGHS[::-1]):
+        c = COLORS_NYC.get(borough, "#0E0E0E")
+        fig.add_trace(
+            go.Scatter(
+                x=df_by_year_smooth.index,
+                y=df_by_year_smooth[borough],
+                mode='lines',
+                line=dict(color=c, width=0, dash='solid'),
+                fillcolor=c,
+                name=f"{borough}",
+                stackgroup='one',
+                )
+            )
+    fig.update_layout(
+        title_text='Total Building Area in each NYC Borough',
+        xaxis_title="Year",
+        yaxis_title="Building Area (sqft)",
+        width = 800,
+        height = 600
+        )
+    fig.update_xaxes(range=[1800, 2023])
+    
+    fig.show()</code></pre></div></div> 
+    <!-- /CODECARD -->
